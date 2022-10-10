@@ -1,0 +1,124 @@
+
+
+<script>
+localStorage.setItem("checked", "false");
+
+var showtime = setInterval(function(){
+
+if(document.querySelector(".hl_header .container-fluid")) {
+
+clearInterval(showtime);
+
+var buttonb = document.createElement("input")
+  
+buttonb.classList.add("tgl", "tgl-light")
+buttonb.setAttribute("type", "checkbox")
+buttonb.setAttribute("style", "display:none;")
+buttonb.setAttribute("id", "buttonb");
+  
+var labelNew = document.createElement("label")
+
+labelNew.setAttribute("for", "buttonb");
+labelNew.classList.add("tgl-btn")
+
+document.querySelectorAll(".hl_header--controls").forEach(x => {x.append(buttonb); x.append(labelNew)})
+    
+buttonb.onclick = function(e){
+
+if(e.target==buttonb){
+
+if(localStorage.getItem("checked") == "true") {
+
+  localStorage.setItem("checked", "false");
+
+document.querySelectorAll(".hl-text-input").forEach(el => el.classList.remove("blur"))
+
+                  document.querySelectorAll("h3").forEach(el => el.classList.remove("blur"))
+                          document.querySelectorAll("h4").forEach(el => el.classList.remove("blur"))
+                          document.querySelectorAll(".phone").forEach(el => el.classList.remove("blur"))
+                          document.querySelectorAll(".email").forEach(el => el.classList.remove("blur"))
+                          document.querySelectorAll(".msgsndr2").forEach(el => el.classList.remove("blur"))
+                          document.querySelectorAll(".msgsndr3").forEach(el => el.classList.remove("blur"))
+                              document.querySelectorAll("h5").forEach(el => el.classList.remove("blur"))
+                              document.querySelectorAll(".value").forEach(el => el.classList.remove("blur"))
+           document.querySelectorAll(".conversation-phone-number input").forEach(el => el.classList.remove("blur"))
+document.querySelectorAll(".hl_conversations--message-header").forEach(el => el.classList.remove("blur"))
+ document.querySelectorAll(".agency-logo-container").forEach(el => el.classList.remove("blur"))
+document.querySelectorAll(".hl_account").forEach(el => el.classList.remove("blur"))
+document.querySelectorAll(".hl_switcher-loc-name").forEach(el => el.classList.remove("blur"))
+  
+} 
+
+else{
+ localStorage.setItem("checked", "true");
+                  document.querySelectorAll("h3").forEach(el => el.classList.add("blur"))
+document.querySelectorAll(".hl_account").forEach(el => el.classList.add("blur"))
+document.querySelectorAll(".hl_conversations--message-header").forEach(el => el.classList.add("blur"))
+                              document.querySelectorAll("h4").forEach(el => el.classList.add("blur"))
+                              document.querySelectorAll("h5").forEach(el => el.classList.add("blur"))
+                              document.querySelectorAll(".value").forEach(el => el.classList.add("blur"))
+document.querySelectorAll(".hl-text-input").forEach(el => el.classList.add("blur"))
+  
+                              document.querySelectorAll(".phone").forEach(el => el.classList.add("blur"))
+                              document.querySelectorAll(".email").forEach(el => el.classList.add("blur"))
+                          document.querySelectorAll(".msgsndr2").forEach(el => el.classList.add("blur"))
+  
+                          document.querySelectorAll(".msgsndr3").forEach(el => el.classList.add("blur"))
+  
+           document.querySelectorAll(".conversation-phone-number input").forEach(el => el.classList.add("blur"))
+ document.querySelectorAll(".agency-logo-container").forEach(el => el.classList.add("blur"))
+document.querySelectorAll(".hl_switcher-loc-name").forEach(el => el.classList.add("blur"))
+}
+
+  }   
+       
+   }
+
+  
+  var oldHref = document.location.href;
+
+   var appm = document.querySelector("body")
+  
+      var observer = new MutationObserver(function(mutations) {
+                          if(localStorage.getItem("checked") == "true"){
+document.querySelectorAll(".hl-text-input").forEach(el => el.classList.add("blur"))
+                    document.querySelectorAll("h3").forEach(el => el.classList.add("blur"))
+                              document.querySelectorAll("h4").forEach(el => el.classList.add("blur"))
+                              document.querySelectorAll("h5").forEach(el => el.classList.add("blur"))
+                              document.querySelectorAll(".value").forEach(el => el.classList.add("blur"))
+  document.querySelectorAll(".hl_conversations--message-header").forEach(el => el.classList.add("blur"))
+
+                              document.querySelectorAll(".phone").forEach(el => el.classList.add("blur"))
+                              document.querySelectorAll(".email").forEach(el => el.classList.add("blur"))
+                          document.querySelectorAll(".msgsndr2").forEach(el => el.classList.add("blur"))
+  
+                          document.querySelectorAll(".msgsndr3").forEach(el => el.classList.add("blur"))
+  
+           document.querySelectorAll(".conversation-phone-number input").forEach(el => el.classList.add("blur"))
+ 
+ document.querySelectorAll(".agency-logo-container").forEach(el => el.classList.add("blur"))
+document.querySelectorAll(".hl_account").forEach(el => el.classList.add("blur"))
+document.querySelectorAll(".hl_switcher-loc-name").forEach(el => el.classList.add("blur"))
+          }
+      
+       
+      });
+      
+      var config = {
+          childList: true,
+          subtree: true,
+  characterData: false,
+      };
+      
+      observer.observe(appm, config);
+}
+else{
+
+
+
+}
+}, 800)
+
+setTimeout(function(){clearInterval(showtime);},22000)
+
+</script>
